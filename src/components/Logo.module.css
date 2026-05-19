@@ -1,0 +1,27 @@
+.link {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.img {
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.sm {
+  max-height: 52px;
+}
+
+.md {
+  max-height: 72px;
+}
+
+.lg {
+  max-height: clamp(140px, 28vw, 220px);
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}

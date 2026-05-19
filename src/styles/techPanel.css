@@ -1,0 +1,152 @@
+/* Shared premium tech surface for Empire AI & Developer Catalogue */
+.techOverlay {
+  --tech-bg: #070b12;
+  --tech-surface: #0d1320;
+  --tech-card: #111827;
+  --tech-border: rgba(56, 189, 248, 0.18);
+  --tech-glow: rgba(56, 189, 248, 0.35);
+  --tech-accent: #38bdf8;
+  --tech-accent2: #d42026;
+  --tech-text: #e8eef7;
+  --tech-muted: #8b9cb8;
+  --tech-grid: rgba(56, 189, 248, 0.04);
+}
+
+.techOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(4, 8, 16, 0.75);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: techFadeIn 0.3s ease-out;
+}
+
+.techPanel {
+  position: relative;
+  background: var(--tech-bg);
+  color: var(--tech-text);
+  border: 1px solid var(--tech-border);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 24px 80px rgba(0, 0, 0, 0.55),
+    0 0 60px rgba(56, 189, 248, 0.08);
+  overflow: hidden;
+}
+
+.techPanel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--tech-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--tech-grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.techPanel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--tech-accent),
+    var(--tech-accent2),
+    transparent
+  );
+  animation: techScan 3s linear infinite;
+}
+
+.techBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tech-accent);
+  border: 1px solid var(--tech-border);
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  background: rgba(56, 189, 248, 0.08);
+}
+
+.techBadgeLive {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+  animation: techPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes techFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes techScan {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes techPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes techSlideRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes techModalPop {
+  from {
+    transform: scale(0.94) translateY(12px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .techOverlay,
+  .techPanel::after,
+  .techBadgeLive {
+    animation: none;
+  }
+}
