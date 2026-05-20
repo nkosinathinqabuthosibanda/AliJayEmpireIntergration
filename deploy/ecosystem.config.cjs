@@ -1,16 +1,16 @@
-/** PM2 process file — run from project root: pm2 start deploy/ecosystem.config.cjs */
+/** PM2 — from project root: pm2 start deploy/ecosystem.config.cjs */
 module.exports = {
   apps: [
     {
       name: 'alijay-empire-hub',
-      script: 'server/production.mjs',
+      script: 'server/index.mjs',
       cwd: __dirname + '/..',
-      node_args: '--env-file=.env',
       instances: 1,
       autorestart: true,
       max_memory_restart: '300M',
       env: {
         NODE_ENV: 'production',
+        HOST: '127.0.0.1',
         PORT: 3000,
       },
     },

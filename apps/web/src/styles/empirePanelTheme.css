@@ -1,0 +1,46 @@
+/* Alijay Empire corporate panel theme — AI, catalogue, all modals */
+.empirePanelTheme.techOverlay {
+  --tech-bg: #ffffff;
+  --tech-surface: #f4f6fa;
+  --tech-card: #eef1f7;
+  --tech-border: #dde3ed;
+  --tech-border-strong: #c5d0e0;
+  --tech-accent: #d42026;
+  --tech-accent2: #004080;
+  --tech-text: #1e293b;
+  --tech-muted: #526077;
+  --tech-grid: rgba(0, 64, 128, 0.03);
+  background: rgba(30, 41, 59, 0.4);
+}
+
+.empirePanelTheme .techPanel {
+  color: var(--tech-text);
+  background: var(--tech-bg);
+  border: 1px solid var(--tech-border);
+  box-shadow: var(--shadow-lg, 0 10px 40px rgba(30, 41, 59, 0.15));
+}
+
+.empirePanelTheme .techPanel::before {
+  opacity: 0.5;
+}
+
+.empirePanelTheme .techPanel::after {
+  background: linear-gradient(90deg, transparent, #004080, #d42026, transparent);
+}
+
+.empirePanelTheme .techBadge {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(212, 32, 38, 0.35);
+}
+
+.empirePanelTheme.techOverlay .techBadge {
+  color: #004080;
+  border-color: rgba(0, 64, 128, 0.2);
+  background: rgba(0, 64, 128, 0.08);
+}
+
+.empirePanelTheme .techBadgeLive {
+  background: #d42026;
+  box-shadow: 0 0 6px rgba(212, 32, 38, 0.45);
+}

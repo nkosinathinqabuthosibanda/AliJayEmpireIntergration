@@ -1,14 +1,15 @@
 {
-  "name": "alijay-empire-intergaration",
+  "name": "alijay-empire-integration",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "start": "node --env-file=.env server/production.mjs",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "vite --config apps/web/vite.config.mjs",
+    "build": "node scripts/build.mjs",
+    "start": "node server/index.mjs",
+    "start:prod": "NODE_ENV=production node server/index.mjs",
+    "verify": "node scripts/verify.mjs",
+    "lint": "eslint apps/web"
   },
   "dependencies": {
     "express": "^5.1.0",
@@ -31,5 +32,8 @@
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.59.2",
     "vite": "^8.0.12"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

@@ -1,0 +1,92 @@
+.footer {
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+  background: var(--bg-surface);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.tagline {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--brand-red);
+}
+
+.copy {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.engineering {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+}
+
+.engineering a {
+  color: var(--brand-red);
+  font-weight: 600;
+}
+
+.engineering a:hover {
+  text-decoration: underline;
+}
+
+.engineeringUrl {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-top: 0.15rem;
+}
+
+.engineeringUrl:hover {
+  color: var(--brand-red);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+}
+
+.links a {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+
+.links a:hover {
+  color: var(--accent);
+}
+
+.catalogueLink {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  padding: 0;
+  text-align: left;
+  transition: color 0.2s;
+}
+
+.catalogueLink:hover {
+  color: var(--brand-red);
+}
